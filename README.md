@@ -6,7 +6,7 @@ It will be a flight sync system for virtual planes to AWS servers.
 * createBucket()
 * uploadFile()
 * downloadBucket()
-
+* SyncBuckets() // in progress
 ### Plane Manager
 +type  
 +inFlight  
@@ -15,3 +15,4 @@ It will be a flight sync system for virtual planes to AWS servers.
 * createNewFlights()  
 * takeOff()  
 * land()  
+* dumbAllStatus () // in progress
