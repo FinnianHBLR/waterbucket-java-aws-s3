@@ -1,4 +1,4 @@
-package org.finnhblr.jaws.aircraft;
+package org.finnhblr.jaws.aircraftManager.aircraft;
 
 public class A380 extends Plane {
 

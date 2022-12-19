@@ -1,4 +1,4 @@
-package org.finnhblr.jaws.aircraft;
+package org.finnhblr.jaws.aircraftManager.aircraft;
 import org.finnhblr.jaws.AWSDataManager.SyncBucket;
 
 public abstract class Plane {

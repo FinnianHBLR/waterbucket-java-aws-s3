@@ -1,7 +1,7 @@
 package org.finnhblr.jaws.AWSDataManager;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.finnhblr.jaws.AWSDataManager.functions.UploadFile;
-import org.finnhblr.jaws.aircraft.Plane;
+import org.finnhblr.jaws.aircraftManager.aircraft.Plane;
 import java.io.FileWriter;
 import java.io.IOException;
 

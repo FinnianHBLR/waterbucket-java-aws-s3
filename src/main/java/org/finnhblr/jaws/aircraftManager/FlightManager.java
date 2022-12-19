@@ -1,5 +1,5 @@
 package org.finnhblr.jaws.aircraftManager;
-import org.finnhblr.jaws.aircraft.A380;
+import org.finnhblr.jaws.aircraftManager.aircraft.A380;
 
 import java.io.IOException;
 
