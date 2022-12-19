@@ -6,7 +6,8 @@ It will be a flight sync system for virtual planes to AWS servers.
 * createBucket()
 * uploadFile()
 * downloadBucket()
-* SyncBuckets() // in progress
+* SyncBucket()
+  * Uploads file with plane call sign and data to AWS s3
 ### Plane Manager
 +type  
 +inFlight  
@@ -15,4 +16,5 @@ It will be a flight sync system for virtual planes to AWS servers.
 * createNewFlights()  
 * takeOff()  
 * land()  
-* dumbAllStatus () // in progress
+* s3tracker()
+  * Any data changes in the Plane class are tracked with this function
