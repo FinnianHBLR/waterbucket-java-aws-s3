@@ -1,4 +1,4 @@
-package org.finnhblr.jaws.AWSDataManager;
+package org.finnhblr.jaws.AWSDataManager.functions;
 
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
@@ -8,10 +8,11 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.IOUtils;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class DownloadBucket extends BucketManager {
+public class DownloadBucket {
     public void downloadBucket(String bucketName, String fileName){
         // fileName is the "key" of the file.
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard()
@@ -30,6 +31,12 @@ public class DownloadBucket extends BucketManager {
             System.err.println("File saving error!");
             error.printStackTrace();
         }
+
+
+    }
+    private int countDownloadedBuckets(String path){
+        // Count number of files stored in a specific directory.
+        return new File(path).list().length;
     }
 
 }

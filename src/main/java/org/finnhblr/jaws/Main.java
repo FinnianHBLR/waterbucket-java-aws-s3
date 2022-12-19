@@ -1,11 +1,13 @@
 package org.finnhblr.jaws;
-import org.finnhblr.jaws.AWSDataManager.DownloadBucket;
+import org.finnhblr.jaws.AWSDataManager.SyncBucket;
 import org.finnhblr.jaws.aircraftManager.FlightManager;
+
+import java.io.IOException;
+
 public class Main {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws IOException {
         System.out.println("lo");
-        DownloadBucket s3BucketDownload = new DownloadBucket();
+        // DownloadBucket s3BucketDownload = new DownloadBucket();
         // Create new bucket
         // s3Manager.createBucket("shepp-waterbucket");
         // Upload file to bucket
@@ -15,6 +17,9 @@ public class Main {
 
         FlightManager flightManager = new FlightManager();
         flightManager.createNewFlights();
+
+        // syncer.listAllBucketData("shepp-waterbucket");
+
     }
 
 }

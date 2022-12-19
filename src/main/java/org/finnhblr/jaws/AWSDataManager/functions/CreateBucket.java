@@ -1,4 +1,4 @@
-package org.finnhblr.jaws.AWSDataManager;
+package org.finnhblr.jaws.AWSDataManager.functions;
 
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
