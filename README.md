@@ -1,4 +1,4 @@
-# AWS Bucket tool
+# AWS S3 Airspace Simulator
 This is created to use AWS buckets on the storage service s3!
 It will be a flight sync system for virtual planes to AWS servers.
 
