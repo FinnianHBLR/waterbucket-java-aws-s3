@@ -5,9 +5,12 @@ import org.finnhblr.jaws.aircraftManager.aircraft.Plane;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SyncBucket {
+public class SyncBucketUp {
+    public SyncBucketUp(){
 
-    public SyncBucket(String bucketName, Plane plane) {
+    }
+
+    public void syncBucketUpload(String bucketName, Plane plane) {
         // This is attached to any parameter from any Plane class you'd like to track.
         try{
             // Convert Plane to JSON

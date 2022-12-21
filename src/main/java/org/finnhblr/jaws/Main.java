@@ -1,5 +1,4 @@
 package org.finnhblr.jaws;
-import org.finnhblr.jaws.AWSDataManager.SyncBucket;
 import org.finnhblr.jaws.aircraftManager.FlightManager;
 
 import java.io.IOException;

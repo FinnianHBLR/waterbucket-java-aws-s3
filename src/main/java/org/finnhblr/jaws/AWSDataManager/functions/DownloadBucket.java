@@ -7,13 +7,19 @@ import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.IOUtils;
+import software.amazon.ion.SubstituteSymbolTableException;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class DownloadBucket {
-    public void downloadBucket(String bucketName, String fileName){
+    public DownloadBucket(){
+
+    }
+
+    public byte[] getBucketStream(String bucketName, String fileName) {
         // fileName is the "key" of the file.
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard()
                 .withRegion(Regions.AP_SOUTHEAST_2)
@@ -22,21 +28,15 @@ public class DownloadBucket {
         S3Object object = s3.getObject(new GetObjectRequest(bucketName, fileName));
         S3ObjectInputStream objectContent = object.getObjectContent();
 
-        // Try to save images to ./images/
+        // Get S3 object as byteArray.
+        byte[] byteArrayDownload;
         try {
-            // Saved with bucket name.
-            IOUtils.copy(objectContent, new FileOutputStream(String.format("./dataworkdir/downloaded/%s", fileName)));
-            System.out.println(String.format("Number of saved buckets is: %d", countDownloadedBuckets("./dataworkdir/downloaded/")));
+            // Convert object contents to byteArray
+            byteArrayDownload = IOUtils.toByteArray(objectContent);
+            // DEBUG as string: System.out.println(new String(byteArrayDownload, StandardCharsets.UTF_8));
+            return byteArrayDownload;
         } catch (IOException error) {
-            System.err.println("File saving error!");
-            error.printStackTrace();
+            throw new RuntimeException(error);
         }
-
-
     }
-    private int countDownloadedBuckets(String path){
-        // Count number of files stored in a specific directory.
-        return new File(path).list().length;
-    }
-
 }

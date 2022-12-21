@@ -1,7 +1,8 @@
 package org.finnhblr.jaws.aircraftManager.aircraft;
-import org.finnhblr.jaws.AWSDataManager.SyncBucket;
+import org.finnhblr.jaws.AWSDataManager.SyncBucketUp;
 
 public abstract class Plane {
+    // All plane methods must be defined here and overridden by subclasses! If not, methods will not be available.
     public String type;
     public String callSign;
     public Boolean inFlight;
@@ -9,11 +10,14 @@ public abstract class Plane {
         this.type = type;
         this.callSign = callSign;
         this.inFlight = inFlight;
-
+        // At init the plane will be tracked. This adds extra traffic when objects are synced... An override in SyncPlanesDownload would solve this.
+        s3tracker();
     }
-    private void s3tracker()  {
-        // Any data changes are reflected on a s3 bucket.
-        SyncBucket tracker = new SyncBucket("shepp-waterbucket", this);
+
+    protected void s3tracker()  {
+        // Any data changes are reflected on a s3 bucket. This is protected as only subclasses are able to use this method.
+        SyncBucketUp tracker = new SyncBucketUp();
+        tracker.syncBucketUpload("shepp-waterbucket", this);
     }
     public void takeOff() {
         this.inFlight = true;

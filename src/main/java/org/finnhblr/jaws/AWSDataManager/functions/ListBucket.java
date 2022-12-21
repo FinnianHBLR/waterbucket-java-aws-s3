@@ -10,19 +10,24 @@ import java.util.List;
 
 public class ListBucket {
     public ListBucket(){
-        
+
     }
 
-    public void listAllBucketData(String bucketName) {
+    public List<S3ObjectSummary> listAllBucketData(String bucketName) {
         final AmazonS3 s3 = AmazonS3ClientBuilder.standard()
                 .withRegion(Regions.AP_SOUTHEAST_2)
                 .build();
+        // Create list of object summaries, use getKey to get names.
         ObjectListing objects = s3.listObjects(bucketName);
+
+
         List<S3ObjectSummary> objectList = objects.getObjectSummaries();
-
+        return objectList;
+        // Log out each name
+        /*
         for (S3ObjectSummary s3object: objectList) {
-            System.out.println(s3object.getKey());
+            System.out.println(String.format("S3 Object Lister: %s", s3object.getKey()));
         }
+        */
     }
-
 }
