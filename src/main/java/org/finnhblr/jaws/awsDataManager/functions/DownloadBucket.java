@@ -1,4 +1,4 @@
-package org.finnhblr.jaws.AWSDataManager.functions;
+package org.finnhblr.jaws.awsDataManager.functions;
 
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
@@ -7,12 +7,8 @@ import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.IOUtils;
-import software.amazon.ion.SubstituteSymbolTableException;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 public class DownloadBucket {
     public DownloadBucket(){

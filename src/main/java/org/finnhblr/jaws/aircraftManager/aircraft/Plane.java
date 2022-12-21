@@ -1,5 +1,5 @@
 package org.finnhblr.jaws.aircraftManager.aircraft;
-import org.finnhblr.jaws.AWSDataManager.SyncBucketUp;
+import org.finnhblr.jaws.awsDataManager.SyncBucketUp;
 
 public abstract class Plane {
     // All plane methods must be defined here and overridden by subclasses! If not, methods will not be available.
