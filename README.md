@@ -2,6 +2,11 @@
 This is created to use AWS buckets on the storage service s3!
 It will be a flight sync system for virtual planes to AWS servers.
 
+Todo:
+* Remove dataworkdir
+* Create UI.
+
+
 ### S3 Manager can do the following tasks:
 * createBucket() `⬆️ S3`
 * uploadFile() `⬆️ S3`
